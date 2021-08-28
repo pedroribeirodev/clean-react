@@ -7,7 +7,16 @@
     "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage"
+    "test:ci": "npm test -- --coverage",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "npm run lint:fix"
+  },
+ "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "keywords": [],
   "author": "",
